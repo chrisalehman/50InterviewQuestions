@@ -1,4 +1,4 @@
-package recursion
+package bitmanipulation
 
 
 object K19NoArithmeticOperators {
@@ -8,8 +8,8 @@ object K19NoArithmeticOperators {
      */
     @JvmStatic
     fun main(args: Array<String>) {
-        println("add(11,24): expected=35, actual=${add(11,24)}")
-        println("subtract(24,11): expected=13, actual=${subtract(24,11)}")
+        println("add(11,24): expected=35, actual=${add(11, 24)}")
+        println("subtract(24,11): expected=13, actual=${subtract(24, 11)}")
     }
 
     private fun add(a: Int, b: Int): Int {
