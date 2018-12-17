@@ -53,10 +53,8 @@ object K45AutoComplete {
                 }
                 else
                     curr = v
-
-                if (!i.hasNext())
-                    curr.isEndOfWord = true
             }
+            curr.isEndOfWord = true
         }
 
         fun findMatches(prefix: String): List<String> {
