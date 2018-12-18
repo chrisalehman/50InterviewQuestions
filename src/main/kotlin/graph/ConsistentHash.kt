@@ -5,7 +5,7 @@ import java.math.BigInteger
 import java.security.MessageDigest
 
 
-class ConsistentHash(val numReplicas: Int, nodes: List<String>) {
+class ConsistentHash(val replicas: Int, nodes: List<String>) {
 
     companion object {
         @JvmStatic
@@ -32,14 +32,14 @@ class ConsistentHash(val numReplicas: Int, nodes: List<String>) {
     }
 
     fun add(node: String) {
-        for (i in 0..(numReplicas-1)) {
+        for (i in 0..(replicas-1)) {
             val hash = hash("$node$i")
             ring[hash] = node
         }
     }
 
     fun remove(node: String) {
-        for (i in 0..(numReplicas-1)) {
+        for (i in 0..(replicas-1)) {
             val hash = hash("$node$i")
             ring.remove(hash)
         }
